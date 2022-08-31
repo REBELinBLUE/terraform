@@ -4,6 +4,6 @@ aws_region = "eu-west-2"
 ami = "ami-0fb391cce7a602d1f"
 
 terraform_state_storage = {
-  bucket = "rebelinblue-s3-terraform-remote-state"
+  bucket         = "rebelinblue-s3-terraform-remote-state"
   dynamodb_table = "terraform-state-lock"
 }

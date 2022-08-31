@@ -1,10 +1,6 @@
 resource "aws_s3_bucket" "bucket" {
   bucket = var.terraform_state_storage.bucket
 
-  tags = {
-    Managed_By : local.managed_by
-  }
-
   lifecycle {
     prevent_destroy = true
   }
@@ -31,9 +27,5 @@ resource "aws_dynamodb_table" "terraform_state_lock" {
 
   lifecycle {
     prevent_destroy = true
-  }
-
-  tags = {
-    Managed_By : local.managed_by
   }
 }
