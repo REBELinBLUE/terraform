@@ -18,7 +18,7 @@ resource "aws_instance" "example" {
   }
 
   provisioner "local-exec" {
-    command = "echo Instance Type=${self.instance_type}, Instance ID=${self.id}, Public DNS=${self.public_dns}, AMI ID=${self.ami} >> allinstancedetails.tmp"
+    command = "echo Instance Type=${self.instance_type}, Instance ID=${self.id}, Public DNS=${self.public_dns}, AMI ID=${self.ami} >> allinstancedetails"
   }
 }
 
