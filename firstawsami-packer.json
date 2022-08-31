@@ -10,5 +10,14 @@
             "ami_name": "packer-cf-ami-{{timestamp}}"
         }
     ],
-    "provisioners": []
+    "provisioners": [
+        {
+            "type": "shell",
+            "inline": [
+                "sudo apt update -y",
+                "sudo apt install -y nginx",
+                "sudo service nginx start"
+            ]
+        }
+    ]
 }

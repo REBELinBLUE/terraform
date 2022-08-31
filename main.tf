@@ -107,7 +107,6 @@ resource "aws_security_group_rule" "all_egress_access" {
 
 # Instance
 resource "aws_instance" "example" {
-  #ami           = var.ami
   ami                    = data.aws_ami.packeramis.id
   instance_type          = var.instance_type
   key_name               = aws_key_pair.terraform_key.key_name
@@ -118,13 +117,13 @@ resource "aws_instance" "example" {
     command = "echo Instance Type=${self.instance_type}, Instance ID=${self.id}, Public DNS=${self.public_dns}, AMI ID=${self.ami} >> allinstancedetails"
   }
 
-  provisioner "remote-exec" {
-    inline = [
-      "sudo apt update -y",
-      "sudo apt install -y nginx",
-      "sudo service nginx start"
-    ]
-  }
+  # provisioner "remote-exec" {
+  #   inline = [
+  #     "sudo apt update -y",
+  #     "sudo apt install -y nginx",
+  #     "sudo service nginx start"
+  #   ]
+  # }
 
   connection {
     type        = "ssh"
