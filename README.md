@@ -1,9 +1,19 @@
 # README
 
+## Setup
+
+```bash
+❯ brew install awscli tfenv aws-vault
+❯ aws configure
+❯ cp terraform.tfvars.example terraform.tfvars 
+```
+
 ## Needed
 
 * AWS CLI Profile called "terraform"
-* IAM user with "AdministratorAccess" Policy, plus following
+* IAM user with Programmatic Access, "AdministratorAccess" Policy, plus following Policies
+* S3 bucket called "unique-bucket-name"
+* DynamoDB called "terraform-state-lock"
 
 **TerraformRemoteState**
 ```json
@@ -49,12 +59,15 @@
 ```
 
 ```bash
+❯ aws-vault add terraform
 ❯ aws-vault exec terraform -- aws sts get-caller-identity
 {
     "UserId": "AIDAU5ONRBYTKFRBOKMDY",
     "Account": "338122837542",
     "Arn": "arn:aws:iam::338122837542:user/terraform"
 }
+❯ tfenv use
 ❯ aws-vault exec terraform -- terraform init
-❯aws-vault exec terraform -- terraform plan
+❯ aws-vault exec terraform -- terraform plan
+❯ aws-vault exec terraform -- terraform apply
 ```
