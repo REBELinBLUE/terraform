@@ -1,0 +1,14 @@
+{
+    "variables": {},
+    "builders": [
+        {
+            "type": "amazon-ebs",
+            "region": "eu-west-2",
+            "source_ami": "ami-0fb391cce7a602d1f",
+            "instance_type": "t2.micro",
+            "ssh_username": "ubuntu",
+            "ami_name": "packer-cf-ami-{{timestamp}}"
+        }
+    ],
+    "provisioners": []
+}

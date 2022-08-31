@@ -67,6 +67,7 @@
 }
 ❯ tfenv use
 ❯ aws-vault exec terraform -- terraform init
+❯ aws-vault exec terraform -- packer build firstawsami-packer.json
 ❯ aws-vault exec terraform -- terraform plan
 ❯ aws-vault exec terraform -- terraform apply
 ```
