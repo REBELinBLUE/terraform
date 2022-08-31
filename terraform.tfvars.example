@@ -1,0 +1,13 @@
+aws_region = "eu-west-2"
+
+amis = {
+  # Debian 11 (HVM), SSD Volume Type, 64-bit (x86)
+  "eu-west-1" = "ami-0f98479f8cd5b63f6"
+  "eu-west-2" = "ami-048df70cfbd1df3a9"
+  "eu-west-3" = "ami-002ff2c881c910aa8"
+}
+
+terraform_state_storage = {
+  bucket = "unique-bucket-name"
+  dynamodb_table = "terraform-state-lock"
+}
