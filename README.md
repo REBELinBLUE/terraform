@@ -3,9 +3,8 @@
 ## Setup
 
 ```bash
-❯ brew install awscli tfenv aws-vault
+❯ brew install awscli tfenv aws-vault packer
 ❯ aws configure
-❯ cp terraform.tfvars.example terraform.tfvars 
 ```
 
 ## Needed

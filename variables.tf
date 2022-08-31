@@ -1,12 +1,11 @@
 variable "aws_region" {
   type        = string
-  default     = "eu-west-2"
   description = "AWS region"
 }
 
-variable "amis" {
-  type        = map(string)
-  description = "Region specific AWS Machine Images (AMI)"
+variable "ami" {
+  type        = string
+  description = "Region specific AWS Machine Image (AMI)"
 }
 
 variable "terraform_state_storage" {
